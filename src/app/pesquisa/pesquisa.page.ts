@@ -80,8 +80,8 @@ export class PesquisaPage implements OnInit {
   getParameter() {
 
     let params = new HttpParams();
-    params = params.append('latitude', this.longitude);
-    params = params.append('longitude', this.latitude);
+    params = params.append('latitude', this.latitude);
+    params = params.append('longitude', this.longitude);
 
     if (this.categoria.id != null) {
         params = params.append('idCategoria', this.categoria.id.toString());

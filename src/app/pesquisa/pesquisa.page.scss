@@ -1,0 +1,60 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+
+  
+  // Backgorund da APP
+  ion-content{
+    --ion-background-color:#427288;
+  }
+
+  .ion-color-white {
+    --ion-color-base: #ffffff;
+    --ion-color-contrast:#427288;
+  }
+
+  ion-header {
+    --ion-background-color:#FFFFFF;
+  }
+
+  ion-item{
+    margin-left: 15px;
+    margin-right: 15px;
+    --ion-background-color:#fff;
+  }
+
+.btn{
+    margin-top: 30px;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.titulo {
+    text-align: center;
+    color: #FFFF;
+    margin: 80px;
+    font-size: 26px;
+    width: max-content;
+  }

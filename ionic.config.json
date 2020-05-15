@@ -1,5 +1,7 @@
 {
   "name": "meuproduto-mobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

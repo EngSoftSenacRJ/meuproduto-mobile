@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resultado</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      Quantidade de produtos encotnrados: {{ resultadoPesquisa?.length || '0' }}
+    </ion-list-header>
+    <ion-item *ngFor="let itemPesquisa of resultadoPesquisa">
+      <ion-label>
+        <h2>{{itemPesquisa.nome}}</h2>
+        <p>Descrição: {{itemPesquisa.descricao}}<p>
+        <p>Marca: {{itemPesquisa.marca.nome}}</p>
+        <p>Preço: R$ {{itemPesquisa.preco}}</p>
+        <p>Tempo garantia: {{itemPesquisa.mesesGarantia}}</p>
+      </ion-label>
+    </ion-item>
+  
+   </ion-list>
+
+</ion-content>

@@ -1,0 +1,26 @@
+ion-content{
+    --ion-background-color:#014677;
+}
+
+#formulario{
+    margin-top: 50px;
+    --ion-background-color:#FFF;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+#titulo{
+    font-size: 25px;
+    color: #FFF;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#btnPesquinsa{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: -webkit-fill-available;
+    --background: #131313;
+}

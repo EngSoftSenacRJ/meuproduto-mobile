@@ -44,12 +44,14 @@
   <ion-item>
     <ion-label>Distancia(KM)</ion-label>
     <ion-select [(ngModel)]="distancia" ok-text="Ok" cancel-text="Cancelar">
+      <ion-select-option value="0">Todos</ion-select-option>
       <ion-select-option value="1">1</ion-select-option>
       <ion-select-option value="3">3</ion-select-option>
       <ion-select-option value="5">5</ion-select-option>
       <ion-select-option value="10">10</ion-select-option>
       <ion-select-option value="20">20</ion-select-option>
-      <ion-select-option value="30">50</ion-select-option>
+      <ion-select-option value="50">50</ion-select-option>
+      <ion-select-option value="100">100</ion-select-option>
     </ion-select>
 
   </ion-item>

@@ -84,11 +84,11 @@ export class PesquisaPage implements OnInit {
     let params = new HttpParams();
     
 
-    if (this.categoria.id != null) {
+    if (this.categoria != null) {
         params = params.append('idCategoria', this.categoria.id.toString());
     }
   
-    if (this.marca.id != null) {
+    if (this.marca != null) {
        params = params.append('idMarca', this.marca.id.toString());
     }
 
@@ -96,11 +96,10 @@ export class PesquisaPage implements OnInit {
         params = params.append('nomeProduto', this.produtoPesquisado);
     }
 
-    params = params.append('latitude', this.latitude);
-    params = params.append('longitude', this.longitude);
-
-    if (this.distancia != null) {
+    if (this.distancia != null && this.distancia != 0) {
         params = params.append('distanceKM', this.distancia);
+        params = params.append('latitude', this.latitude);
+        params = params.append('longitude', this.longitude);
     }
 
   return params;
@@ -115,17 +114,19 @@ export class PesquisaPage implements OnInit {
     this.resultadoPesquisa = '';
     await this.getCurrentCoordinates();
 
-    const service = this.baseUrl + '/search';
+    const service = this.baseUrl + ':8082/searchapi/search';//'http://18.218.14.149:8082/searchapi/search' //this.baseUrl + '/search';
     const resource = 'produtoSearchResponseResources';
     
-
+    console.log(this.getParameter());
     this.httpClient.get<any[]>(service, {params: this.getParameter()})
-      .pipe(map(data => data[this.campo][resource]))
-      .subscribe(retorno => { 
+      .pipe(
+        map(data => data))//[this.campo][resource],
+      .subscribe(retorno => {       
         this.resultadoPesquisa = retorno;
         this.openModal();
       },(err) => {
         console.log(err);
+        alert(err);
         this.openModal();
       })
 
@@ -137,14 +138,15 @@ export class PesquisaPage implements OnInit {
   /* Recupera todas categorias */
   /* ========================= */
   public getCategoria() {
-    const service = this.baseUrl + '/categorias';
+    const service = this.baseUrl + ':8080/api/categorias';
     const resource = 'categoriaProdutoResources';
 
     this.httpClient.get<Categoria[]>(service)
       .pipe(
           map(data => data[this.campo][resource]),
       ).subscribe(
-          categorias => this.categorias = categorias
+          categorias => this.categorias = categorias,
+          err=> alert('Erro ao carregar categorias' + err.message)
       );
       
   }
@@ -153,14 +155,15 @@ export class PesquisaPage implements OnInit {
   /* Recupera todas as marcas  */
   /* ========================= */
   public getMarca() {
-    const service = this.baseUrl + '/marcas';
+    const service = this.baseUrl + ':8080/api/marcas';
     const resource = 'marcaProdutoResources';
 
     this.httpClient.get<Marca[]>(service)
       .pipe(
           map(data => data[this.campo][resource])
       ).subscribe(
-          marcas => this.marcas = marcas
+          marcas => this.marcas = marcas, err=>
+          alert('Erro ao carregar marcas' + err.message)
       );
   }
 

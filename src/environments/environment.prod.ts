@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serveApi: 'http://meuproduto.ddns.net:8080/api'
+  serveApi: 'http://18.218.14.149'
 };

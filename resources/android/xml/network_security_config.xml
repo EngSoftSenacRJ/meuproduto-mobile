@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">meuproduto.ddns.net</domain>
+        <domain includeSubdomains="true">18.218.14.149</domain>
     </domain-config>
 </network-security-config>

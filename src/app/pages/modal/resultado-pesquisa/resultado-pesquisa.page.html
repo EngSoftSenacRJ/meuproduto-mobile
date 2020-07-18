@@ -13,15 +13,18 @@
 
   <ion-list>
     <ion-list-header>
-      Quantidade de produtos encotnrados: {{ resultadoPesquisa?.length || '0' }}
+      Quantidade de produtos encontrados: {{ resultadoPesquisa?.length || '0' }}
     </ion-list-header>
     <ion-item *ngFor="let itemPesquisa of resultadoPesquisa">
       <ion-label>
-        <h2>{{itemPesquisa.nome}}</h2>
-        <p>Descrição: {{itemPesquisa.descricao}}<p>
-        <p>Marca: {{itemPesquisa.marca.nome}}</p>
-        <p>Preço: R$ {{itemPesquisa.preco}}</p>
-        <p>Tempo garantia: {{itemPesquisa.mesesGarantia}}</p>
+        <h2>{{itemPesquisa.produtoNome}}</h2>
+        <p>Descrição: {{itemPesquisa.produtoDesc}}<p>
+        <p>Marca: {{itemPesquisa.marcaNome}}</p>
+        <p>Preço: R$ {{itemPesquisa.lojaProdutoPreco}}</p>
+        <p>Garantia: {{itemPesquisa.produtoMesesGarantia}}</p>
+        <p>Loja: {{itemPesquisa.lojaNome}}</p>
+        <p>Endereço: {{itemPesquisa.lojaRuaEnderecoComercial}},{{itemPesquisa.lojaNumeroEnderecoComercial}}.</p>
+        <p>{{itemPesquisa.lojaBairroEnderecoComercial}}, {{itemPesquisa.lojaCidadeEnderecoComercial}} - {{itemPesquisa.lojaEstadoEnderecoComercial}}</p>
       </ion-label>
     </ion-item>
   
